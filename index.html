@@ -26,9 +26,9 @@
                 <aside class="sidebar">
                     <header>
                         
-                        <a class="user" href="#">
+                        <a class="user foto_profilo" href="#">
                             <img src="img/avatar_io.jpg" alt="Avatar io">
-                            <h1 class="name">Nome Utente</h1>
+                            <h1 class="name">Pietro</h1>
                         </a>
                     
                         <div class="icons">
@@ -70,10 +70,17 @@
 
                     <section id="contacts">
                         
-                        <div v-for="contact in contacts">
-                            <span>{{contact.name}}</span>
-                            <span>{{contact.messages[contact.messages.length-1].date}}</span>
-                            <div> {{contact.messages[contact.messages.length -1].text}}</div>
+                        <div v-for="contact in contacts" class="contact foto_profilo">
+                            <img :src='"img/avatar" + contact.avatar + ".jpg"' alt="">
+
+                            <div>
+                                <div>{{contact.name}}</div>
+                                <div class="anteprima_ultimo_messaggio" v-if="contact.messages[contact.messages.length-1].text.length >= 30"> {{contact.messages[contact.messages.length -1].smallText}}</div>
+                                <div class="anteprima_ultimo_messaggio" v-else>{{contact.messages[contact.messages.length -1].text}}</div>
+                            </div>
+
+                            <div class="date">{{contact.messages[contact.messages.length-1].date}}</div>
+                            
                         </div>
 
                     </section>
@@ -83,12 +90,11 @@
                 <main>
 
                     <header>
-                            <a class="user" href="#">
+                            <a class="user foto_profilo" href="#">
                                 <img src="img/avatar_1.jpg" alt="Avatar 1">
                                 <div class="name">
-                                    <h1>Michele</h1>
-                                    <h4>Ultimo messaggio oggi alle 10/01/2020</h4>
-                                    <h4>16:15:22</h4>
+                                    <h1>{{contacts[0].name}}</h1>
+                                    <h4>Ultimo accesso oggi {{contacts[0].messages[0].date}}</h4>
                                 </div>
                             </a>
                         
@@ -112,16 +118,10 @@
                             <div class="text sent">
                                 <div>Hai portato a spasso il cane?</div>
                                 <div class="data_ora">10/01/2020 15:30:55</div>
-                                <!-- <div class="info-message">
-                                    <div class="data_ora">10/01/2020 16:15:22</div>
-                                </div> -->
                             </div>
                             <div class="text sent">
                                 <div>Ricordati di dargli da mangiare</div>
                                 <div class="data_ora">10/01/2020 15:30:55</div>
-                                <!-- <div class="info-message">
-                                    <div class="data_ora">10/01/2020 15:50:00</div>
-                                </div> -->
                             </div>
                             <div class="text received">
                                 <div>Tutto fatto!</div>

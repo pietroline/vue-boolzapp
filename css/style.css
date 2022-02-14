@@ -57,9 +57,12 @@ body{
             justify-content: space-between;
         }
 
-        header img{
+        /* regola valida anche su contacts*/
+        .foto_profilo img{
             height: 4rem;
+
             padding: 0.5rem;
+
             border-radius: 50%;
         }
 
@@ -161,6 +164,44 @@ body{
             height: calc(100% - 13.1rem); /*13.1rem è la somma delle altezze di header, notifications, input e margin di #search*/
             background-color: #fff;
         }
+
+        .contact{
+            display: flex;
+
+            padding: 0.5rem 0 0.5rem 1rem ; 
+
+            position: relative; 
+        }
+
+        .contact:hover{
+            background-color: #e9eaea;
+            
+            cursor: pointer;
+        }
+
+        .contact img{
+            margin-right: 1rem;
+        }
+
+        .anteprima_ultimo_messaggio{
+            color: #b0b0b0;
+
+            font-size: 0.8rem;
+
+            margin-top: 0.3rem;
+        }
+
+        .date{ 
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0.4rem 0.4rem 0 0;
+
+            color: #b0b0b0;
+
+            font-size: 0.8rem;
+        }
+
     /* fine regole contacts */
 
 /* fine regole sidebar */
@@ -181,6 +222,8 @@ body{
 
         font-size: 0.8rem;
         font-weight: normal;
+
+        width: 15rem;
     }
 
     /* inizio regole messages */
@@ -205,7 +248,13 @@ body{
 
             display: flex;
             flex-direction: column;
-            align-items: center;
+
+            min-width: 18rem;
+            max-width: 70%;
+        }
+
+        .messages .text div:first-child{
+            word-break: break-all;
         }
 
         .text .data_ora{

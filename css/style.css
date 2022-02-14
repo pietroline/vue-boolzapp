@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+[v-cloak] {
+    display: none;
+}
+
 
 body{
     background-color: #d6dad6;
@@ -199,8 +203,6 @@ body{
             padding: 0.6rem 1rem 0 1rem;
             margin: 0.5rem 0;
 
-            /* position: relative; */
-
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -208,10 +210,6 @@ body{
 
         .text .data_ora{
             font-size: 0.6rem;
-
-            /* position: absolute;
-            bottom: 0;
-            right: 0; */
 
             margin: 0.3rem;
 
@@ -225,11 +223,20 @@ body{
             background-color: #cff8bc;
         }
 
+        text.send .info-message{
+            display: flex;
+            justify-content: end;
+        }
+
         .text.received{
             align-self: flex-start;
-            align-items: flex-end;
 
             background-color: #fff;
+        }
+
+        .info-message{
+            display: flex;
+            justify-content: end;
         }
     /* fine regole message */
 

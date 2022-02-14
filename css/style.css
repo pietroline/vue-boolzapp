@@ -3,3 +3,246 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
+body{
+    background-color: lightgray;
+}
+
+.container{
+    width: 80vw;
+    height: 96vh;
+
+    margin: 2vh auto;
+    
+    min-width: 800px;
+    min-height: 600px;
+
+    display: flex;
+}
+
+/* inizio regole sidebar */
+
+    .sidebar{
+        width: 35%;
+        min-width: 400px;
+        
+        background-color: #fafafa;
+    }
+
+    /* inizio regole header valide anche per header del main */
+        header{
+            background-color: #eaeae9;
+            height: 4rem;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header img{
+            height: 4rem;
+            padding: 0.5rem;
+            border-radius: 50%;
+        }
+
+        header .user{
+            display: flex;
+            align-items: center;
+
+            text-decoration: none;
+            color: #000;
+        }
+
+        header .user > .name h1{
+            font-size: 1rem;
+        }
+
+        header .icons{
+            margin-right: 1rem;
+
+            font-size: 1.5rem;
+        }
+
+        header .icons a{
+            margin: 0 0.5rem;
+
+            color: #b0b0b0;
+            
+            text-decoration: none;
+        }
+    /* fine regole header valide anche per header del main */
+
+    /* inizio regole notifications */
+        #notifications{
+            height: 5rem;
+
+            background-color: #83d9f9;
+
+            display: flex;
+            align-items: center;
+
+            padding: 1rem;
+        }
+
+        #notifications i{
+            font-size: 1.8rem;
+
+            background-color: #fff;
+            border-radius: 50%;
+            padding: 0.8rem;
+            color: #83d9f9;
+
+            margin-right: 1rem;
+        }
+
+        #notifications .options{
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        #notifications .notifications_on{
+            font-weight: normal;
+            font-size: 0.8rem;
+
+            text-decoration: underline;
+
+            color: #4e7787;
+        }
+    /* fine regole notifications */
+
+    /* inizio regole search */
+        #search{
+            margin: 0.8rem;
+            position: relative;
+        }
+
+        #search i{
+            color: #b0b0b0;
+
+            font-size: 1.5rem;
+            
+            position: absolute;
+            left: 0.8rem;
+            top: 50%;
+            transform: translateY(-50%)
+        }
+
+        #search input{
+            width: 100%;
+            height: 2.5rem;
+
+            padding-left: 3rem;
+
+            border: none;
+        }
+    /* fine regole search */
+
+    /* inizio regole contacts */
+        #contacts{
+            width: 95%;
+            height: calc(100% - 13.1rem); /*13.1rem è la somma delle altezze di header, notifications, input e margin di #search*/
+            background-color: #fff;
+        }
+    /* fine regole contacts */
+
+/* fine regole sidebar */
+
+/* inizio regole main */
+
+    main{
+        width: 65%;
+        min-width: 500px;
+    }
+
+    main header{
+        border-left: 1px solid #b0b0b0;
+    }
+
+    main .name h4{
+        margin-top: 0.2rem;
+
+        font-size: 0.8rem;
+        font-weight: normal;
+    }
+
+    /* inizio regole messages */
+        .messages{
+            background-image: url("../img/mine.jpg");
+
+            width: 100%;
+            height: calc(100% - 8rem); /* sottraggo altezza header e footer*/
+
+            padding: 3rem;
+
+        }
+
+        .messages .text{    
+            height: 4rem;
+            width: calc(40%);
+            
+            border-radius: 0.5rem;
+
+            padding: 0 1rem;
+            margin: 0.5rem 0;
+
+            position: relative;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .text .data_ora{
+            font-size: 0.6rem;
+
+            position: absolute;
+            bottom: 0;
+            right: 0;
+
+            margin: 0.3rem;
+
+            color: #b0b0b0;
+        }
+
+        .text.sent{
+            float: right;
+
+            background-color: #cff8bc;
+        }
+
+        .text.received{
+            float: left;
+
+            background-color: #fff;
+        }
+    /* fine regole message */
+
+    /* inizio regole footer */
+        .footer{
+            height: 4rem;
+
+            background-color: #f3edea;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .footer input{
+            border: none;
+
+            height: 3rem;
+
+            width: 80%;
+
+            padding: 0 1rem;
+        }
+
+        .footer i{
+            font-size: 1.5rem;
+
+            color: #b0b0b0;
+        }
+    /* fine regole footer */
+
+/* fine regole main */

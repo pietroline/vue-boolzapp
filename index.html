@@ -17,121 +17,141 @@
 
     <body>
 
-        <div class="green_bar"></div>
+        <div id="app" v-cloak>
 
-        <div class="container">
+            <div class="green_bar"></div>
 
-            <aside class="sidebar">
-                <header>
-                    
-                    <a class="user" href="#">
-                        <img src="img/avatar_io.jpg" alt="Avatar io">
-                        <h1 class="name">Nome Utente</h1>
-                    </a>
-                
-                    <div class="icons">
+            <div class="container">
 
-                        <a href="#">
-                            <i class="fa-solid fa-circle-notch"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fa-solid fa-message"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
-                        </a>
+                <aside class="sidebar">
+                    <header>
                         
-                    </div>
-                    
-                </header>
-
-                <section id="notifications">
-
-                    <i class="fa-solid fa-bell-slash"></i>
-
-                    <div class="options">
-                        <div>Ricevi notifiche di nuovi messaggi</div>
-                        <a class="notifications_on" href="#">Attiva notifiche desktop</a>
-                    </div>
-
-                </section>
-                
-                <section id="search">
-
-                    <a href="#">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </a>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
-    
-                </section>
-
-
-                <section id="contacts">
-                    
-                </section>
-               
-            </aside>
-
-            <main>
-
-                <header>
                         <a class="user" href="#">
-                            <img src="img/avatar_1.jpg" alt="Avatar 1">
-                            <div class="name">
-                                <h1>Michele</h1>
-                                <h4>Ultimo messaggio oggi alle 10/01/2020</h4>
-                                <h4>16:15:22</h4>
-                            </div>
+                            <img src="img/avatar_io.jpg" alt="Avatar io">
+                            <h1 class="name">Nome Utente</h1>
                         </a>
                     
                         <div class="icons">
 
                             <a href="#">
-                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <i class="fa-solid fa-circle-notch"></i>
                             </a>
                             <a href="#">
-                                <i class="fa-solid fa-paperclip"></i>
+                                <i class="fa-solid fa-message"></i>
                             </a>
                             <a href="#">
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </a>
                             
                         </div>
-                </header>
+                        
+                    </header>
 
-                <section class="messages">
+                    <section id="notifications">
 
-                        <div class="text sent">
-                            <div>Hai portato a spasso il cane?</div>
-                            <div class="data_ora">10/01/2020 15:30:55</div>
+                        <i class="fa-solid fa-bell-slash"></i>
+
+                        <div class="options">
+                            <div>Ricevi notifiche di nuovi messaggi</div>
+                            <a class="notifications_on" href="#">Attiva notifiche desktop</a>
                         </div>
-                        <div class="text sent">
-                            <div>Ricordati di dargli da mangiare</div>
-                            <div class="data_ora">10/01/2020 15:50:00</div>
-                        </div>
-                        <div class="text received">
-                            <div>Tutto fatto!</div>
-                            <div class="data_ora">10/01/2020 16:15:22</div>
-                        </div>
+
+                    </section>
                     
-                </section>
+                    <section id="search">
 
-                <section class="footer">
-                
-                    <a href="#">
-                        <i class="fa-regular fa-face-smile"></i>
-                    </a>
-                    <input type="text" placeholder="Scrivi un messaggio">
-                    <a href="#">
-                        <i class="fa-solid fa-microphone"></i>
-                    </a>
-
-                </section>
-
-            </main>
-
-        </div>
+                        <a href="#">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </a>
+                        <input type="text" placeholder="Cerca o inizia una nuova chat">
         
+                    </section>
+
+
+                    <section id="contacts">
+                        
+                        <div v-for="contact in contacts">
+                            <span>{{contact.name}}</span>
+                            <span>{{contact.messages[contact.messages.length-1].date}}</span>
+                            <div> {{contact.messages[contact.messages.length -1].text}}</div>
+                        </div>
+
+                    </section>
+                
+                </aside>
+
+                <main>
+
+                    <header>
+                            <a class="user" href="#">
+                                <img src="img/avatar_1.jpg" alt="Avatar 1">
+                                <div class="name">
+                                    <h1>Michele</h1>
+                                    <h4>Ultimo messaggio oggi alle 10/01/2020</h4>
+                                    <h4>16:15:22</h4>
+                                </div>
+                            </a>
+                        
+                            <div class="icons">
+
+                                <a href="#">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa-solid fa-paperclip"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </a>
+                                
+                            </div>
+                    </header>
+
+                    <section class="messages">
+
+                            <div class="text sent">
+                                <div>Hai portato a spasso il cane?</div>
+                                <div class="data_ora">10/01/2020 15:30:55</div>
+                                <!-- <div class="info-message">
+                                    <div class="data_ora">10/01/2020 16:15:22</div>
+                                </div> -->
+                            </div>
+                            <div class="text sent">
+                                <div>Ricordati di dargli da mangiare</div>
+                                <div class="data_ora">10/01/2020 15:30:55</div>
+                                <!-- <div class="info-message">
+                                    <div class="data_ora">10/01/2020 15:50:00</div>
+                                </div> -->
+                            </div>
+                            <div class="text received">
+                                <div>Tutto fatto!</div>
+                                <div class="info-message">
+                                    <div class="data_ora">10/01/2020 16:15:22</div>
+                                </div>
+                            </div>
+                        
+                    </section>
+
+                    <section class="footer">
+                    
+                        <a href="#">
+                            <i class="fa-regular fa-face-smile"></i>
+                        </a>
+                        <input type="text" placeholder="Scrivi un messaggio">
+                        <a href="#">
+                            <i class="fa-solid fa-microphone"></i>
+                        </a>
+
+                    </section>
+
+                </main>
+
+            </div>
+            
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
     </body>
 
 </html>

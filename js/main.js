@@ -138,11 +138,29 @@ const vue = new Vue(
                         date: '10/01/2020 16:15:22',
                         text: this.textSend,
                         status: 'sent',
-                    }
+                    };
 
                     this.textSend = "";
                     this.showContact.messages.push(message); 
+
+                    // this.answerText()
                 }
+                
+            },
+
+            answerText(){
+                setTimeout(() => this.receivedMessage(), 1000);
+            },
+
+            receivedMessage(){
+
+                const message = {
+                    date: '10/01/2020 16:15:22',
+                    text: "ok",
+                    status: 'received',
+                };
+
+                this.showContact.messages.push(message); 
                 
             },
 

@@ -10,15 +10,7 @@
 
 
 body{
-    background-color: #d6dad6;
-}
-
-.green_bar{
-    height: 8rem;
-
-    background-color: #009587;
-
-    position: relative;
+    background: linear-gradient(to top, #d6dad6 85%, #009587 15%);
 }
 
 .container{
@@ -32,10 +24,10 @@ body{
 
     display: flex;
 
-    position: absolute;
+    /* position: absolute;
     top: 0;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); */
 }
 
 /* inizio regole sidebar */

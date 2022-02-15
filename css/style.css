@@ -47,6 +47,7 @@ body{
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex-shrink: 0;
         }
 
         /* regola valida anche su contacts*/
@@ -94,7 +95,8 @@ body{
 
             display: flex;
             align-items: center;
-
+            flex-shrink: 0;
+            
             padding: 1rem;
         }
 
@@ -128,6 +130,8 @@ body{
         #search{
             margin: 0.8rem;
             position: relative;
+
+            flex-shrink: 0;
         }
 
         #search i{

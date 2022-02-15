@@ -143,27 +143,19 @@ const vue = new Vue(
                     this.textSend = "";
                     this.showContact.messages.push(message); 
 
-                    // this.answerText()
+                    //simulo risposta con ok
+                    setTimeout(() => {
+                        this.showContact.messages.push (
+                                                            {
+                                                                date: '10/01/2020 16:15:22',
+                                                                text: "ok",
+                                                                status: 'received',
+                                                            }
+                                                        );
+                    }, 1000);
                 }
                 
             },
-
-            answerText(){
-                setTimeout(() => this.receivedMessage(), 1000);
-            },
-
-            receivedMessage(){
-
-                const message = {
-                    date: '10/01/2020 16:15:22',
-                    text: "ok",
-                    status: 'received',
-                };
-
-                this.showContact.messages.push(message); 
-                
-            },
-
         }
     
     }

@@ -70,7 +70,7 @@
 
                     <section id="contacts">
                         
-                        <div v-for="contact in contacts" class="contact foto_profilo">
+                        <div v-for="(contact, index) in contacts" class="contact foto_profilo" @click="drawsContact(index)">
 
                             <img :src="`img/avatar${contact.avatar}.jpg`" :alt="`img utente${contact.avatar}`">
 
@@ -91,10 +91,10 @@
 
                     <header>
                             <a class="user foto_profilo" href="#">
-                                <img :src="`img/avatar${contacts[0].avatar}.jpg`" alt="Avatar 1">
+                                <img :src="`img/avatar${showContact.avatar}.jpg`" alt="Avatar 1">
                                 <div class="name">
-                                    <h1>{{contacts[0].name}}</h1>
-                                    <h4>Ultimo accesso oggi {{contacts[0].messages[0].date}}</h4>
+                                    <h1>{{showContact.name}}</h1>
+                                    <h4>Ultimo accesso oggi {{showContact.messages[showContact.messages.length-1].date}}</h4>
                                 </div>
                             </a>
                         
@@ -115,7 +115,7 @@
 
                     <section class="messages">
                         
-                        <div v-for="message in contacts[0].messages" class="text" :class="message.status=='sent'?'sent':'received'">
+                        <div v-for="message in showContact.messages" class="text" :class="message.status=='sent'?'sent':'received'">
                             <div>{{message.text}}</div>
                             <div class="data_ora info-message">{{message.date}}</div>
                         </div>

@@ -21,8 +21,8 @@ body{
 
     margin: 3vh auto;
     
-    min-width: 800px;
-    min-height: 600px;
+    min-width: 1000px;
+    min-height: 300px;
 
     display: flex;
 }
@@ -31,7 +31,6 @@ body{
 
     .sidebar{
         width: 35%;
-        min-width: 400px;
         
         background-color: #fafafa;
 
@@ -227,7 +226,6 @@ body{
 
     main{
         width: 65%;
-        min-width: 500px;
     }
 
     main header{
@@ -270,8 +268,7 @@ body{
             display: flex;
             flex-direction: column;
 
-            min-width: 18rem;
-            max-width: 70%;
+       
         }
 
         .messages .text div:first-child{

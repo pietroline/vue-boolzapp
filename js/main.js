@@ -116,7 +116,7 @@ const vue = new Vue(
 
             textSend: "",
             search: "",
-            indexConractAttivo: 0,
+            indexContactAttivo: 0,
         },
 
         mounted: function () {
@@ -132,7 +132,7 @@ const vue = new Vue(
                 this.showContact.avatar = this.contacts[indice].avatar;  
                 this.showContact.visible = this.contacts[indice].visible;
                 this.showContact.messages = this.contacts[indice].messages;  
-                this.indexConractAttivo = indice;  
+                this.indexContactAttivo = indice;  
             },
 
             sendMessage(){

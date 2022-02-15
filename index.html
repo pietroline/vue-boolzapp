@@ -70,7 +70,7 @@
 
                     <section id="contacts">
                         
-                        <div v-for="(contact, index) in contacts" class="contact foto_profilo" :class="index==indexConractAttivo?'active':''" @click="drawsContact(index)">
+                        <div v-for="(contact, index) in contacts" class="contact foto_profilo" :class="index==indexContactAttivo?'active':''" @click="drawsContact(index)">
                             
                             <div :class="contact.visible==false?'invisible':'visible'">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" :alt="`img utente${contact.avatar}`">

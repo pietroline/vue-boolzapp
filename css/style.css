@@ -178,9 +178,7 @@ body{
             background-color: #eaeaea;
         }
 
-        .contact:hover{
-            background-color: #eaeaea;
-            
+        .contact:hover{         
             cursor: pointer;
         }
 

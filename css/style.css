@@ -32,6 +32,9 @@ body{
         min-width: 400px;
         
         background-color: #fafafa;
+
+        display: flex;
+        flex-direction: column;
     }
 
     /* inizio regole header valide anche per header del main */
@@ -148,8 +151,12 @@ body{
     /* inizio regole contacts */
         #contacts{
             width: 95%;
-            height: calc(100% - 13.1rem); /*13.1rem è la somma delle altezze di header, notifications, input e margin di #search*/
+            
+            flex-grow: 1;
+
             background-color: #fff;
+
+            overflow-y: scroll;
         }
 
         .contact{
@@ -224,6 +231,8 @@ body{
 
             display: flex;
             flex-direction: column;
+
+            overflow-y: scroll;
 
         }
 

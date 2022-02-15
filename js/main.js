@@ -112,6 +112,8 @@ const vue = new Vue(
                                 }
                             ],
             },
+
+            textSend: "",
         },
         methods:{
 
@@ -120,7 +122,22 @@ const vue = new Vue(
                 this.showContact.avatar = this.contacts[indice].avatar;  
                 this.showContact.visible = this.contacts[indice].visible;
                 this.showContact.messages = this.contacts[indice].messages;    
-            }
+            },
+
+            sendMessage(){
+
+                if(this.textSend != ""){
+                    const message = {
+                        date: '10/01/2020 16:15:22',
+                        text: this.textSend,
+                        status: 'sent',
+                    }
+
+                    this.textSend = "";
+                    this.showContact.messages.push(message); 
+                }
+                
+            },
 
         }
     

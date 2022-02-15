@@ -71,7 +71,8 @@
                     <section id="contacts">
                         
                         <div v-for="contact in contacts" class="contact foto_profilo">
-                            <img :src='"img/avatar" + contact.avatar + ".jpg"' alt="">
+                            
+                            <img :src="`img/avatar${contact.avatar}.jpg`" :alt="`img utente${contact.avatar}`">
 
                             <div>
                                 <div>{{contact.name}}</div>

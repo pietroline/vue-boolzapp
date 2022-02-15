@@ -115,6 +115,13 @@ const vue = new Vue(
 
             textSend: "",
         },
+
+        mounted: function () {
+            this.$nextTick(function () {
+              this.drawsContact(0);
+            })
+        },
+        
         methods:{
 
             drawsContact(indice){

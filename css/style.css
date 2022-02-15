@@ -303,28 +303,48 @@ body{
     /* inizio regole footer */
         .footer{
             height: 4rem;
+            line-height: 4rem;
+            vertical-align: middle;
 
-            background-color: #f3edea;
+            background-color: #f3edea
+        }
 
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
+        .footer::after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .footer .left{
+            float: left;
+        }
+
+        .footer .right{
+            float: right;
         }
 
         .footer input{
             border: none;
 
             height: 3rem;
-
             width: 80%;
 
             padding: 0 1rem;
+        }
+
+        .footer a{
+            width: 10%;
+
+            text-align: center;
         }
 
         .footer i{
             font-size: 1.5rem;
 
             color: #6b7376;
+
+            line-height: 4rem;
+            vertical-align: middle;
         }
     /* fine regole footer */
 

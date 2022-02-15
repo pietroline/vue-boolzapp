@@ -278,14 +278,8 @@ body{
 
         .text.sent{
             align-self: flex-end;
-            align-items: flex-end;
 
             background-color: #cff8bc;
-        }
-
-        text.send .info-message{
-            display: flex;
-            justify-content: end;
         }
 
         .text.received{

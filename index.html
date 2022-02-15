@@ -91,7 +91,7 @@
 
                     <header>
                             <a class="user foto_profilo" href="#">
-                                <img src="img/avatar_1.jpg" alt="Avatar 1">
+                                <img :src="`img/avatar${contacts[0].avatar}.jpg`" alt="Avatar 1">
                                 <div class="name">
                                     <h1>{{contacts[0].name}}</h1>
                                     <h4>Ultimo accesso oggi {{contacts[0].messages[0].date}}</h4>
@@ -114,21 +114,11 @@
                     </header>
 
                     <section class="messages">
-
-                            <div class="text sent">
-                                <div>Hai portato a spasso il cane?</div>
-                                <div class="data_ora">10/01/2020 15:30:55</div>
-                            </div>
-                            <div class="text sent">
-                                <div>Ricordati di dargli da mangiare</div>
-                                <div class="data_ora">10/01/2020 15:30:55</div>
-                            </div>
-                            <div class="text received">
-                                <div>Tutto fatto!</div>
-                                <div class="info-message">
-                                    <div class="data_ora">10/01/2020 16:15:22</div>
-                                </div>
-                            </div>
+                        
+                        <div v-for="message in contacts[0].messages" class="text" :class="message.status=='sent'?'sent':'received'">
+                            <div>{{message.text}}</div>
+                            <div class="data_ora info-message">{{message.date}}</div>
+                        </div>
                         
                     </section>
 

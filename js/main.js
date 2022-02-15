@@ -44,7 +44,6 @@ const vue = new Vue(
                                                 {
                                                     date: '20/03/2020 16:35:00',
                                                     text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                                                    smallText: "Mi piacerebbe ma devo andare a...",
                                                     status: 'sent'
                                                 }
                                             ],
@@ -86,7 +85,6 @@ const vue = new Vue(
                                                 {
                                                     date: '10/01/2020 15:50:00',
                                                     text: 'Si, ma preferirei andare al cinema',
-                                                    smallText: "Si, ma preferirei andare al ci...",
                                                     status: 'received'
                                                 }
                                             ],

@@ -186,6 +186,11 @@ body{
             font-size: 0.8rem;
 
             margin-top: 0.3rem;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 23ch;
         }
 
         .date{ 

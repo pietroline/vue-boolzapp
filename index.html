@@ -71,13 +71,12 @@
                     <section id="contacts">
                         
                         <div v-for="contact in contacts" class="contact foto_profilo">
-                            
+
                             <img :src="`img/avatar${contact.avatar}.jpg`" :alt="`img utente${contact.avatar}`">
 
                             <div>
                                 <div>{{contact.name}}</div>
-                                <div class="anteprima_ultimo_messaggio" v-if="contact.messages[contact.messages.length-1].text.length >= 30"> {{contact.messages[contact.messages.length -1].smallText}}</div>
-                                <div class="anteprima_ultimo_messaggio" v-else>{{contact.messages[contact.messages.length -1].text}}</div>
+                                <div class="anteprima_ultimo_messaggio"> {{contact.messages[contact.messages.length -1].text}}</div>
                             </div>
 
                             <div class="date">{{contact.messages[contact.messages.length-1].date}}</div>

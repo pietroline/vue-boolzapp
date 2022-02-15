@@ -90,6 +90,7 @@ const vue = new Vue(
                                             ],
                             },
                         ],
+
             showContact: {
                 name: 'Michela',
                 avatar: '_1',
@@ -114,6 +115,8 @@ const vue = new Vue(
             },
 
             textSend: "",
+            search: "",
+            indexConractAttivo: 0,
         },
 
         mounted: function () {
@@ -128,7 +131,8 @@ const vue = new Vue(
                 this.showContact.name = this.contacts[indice].name; 
                 this.showContact.avatar = this.contacts[indice].avatar;  
                 this.showContact.visible = this.contacts[indice].visible;
-                this.showContact.messages = this.contacts[indice].messages;    
+                this.showContact.messages = this.contacts[indice].messages;  
+                this.indexConractAttivo = indice;  
             },
 
             sendMessage(){
@@ -156,6 +160,20 @@ const vue = new Vue(
                 }
                 
             },
+
+            userSearch(){
+
+                let inserito = this.search.toLowerCase();
+
+                this.contacts.forEach(element => {
+
+                    let nomeUtente = element.name.toLowerCase();
+                    element.visible = !nomeUtente.includes(inserito) ? false:true
+                    
+                });
+                
+                
+            }
         }
     
     }

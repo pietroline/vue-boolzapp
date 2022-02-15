@@ -63,23 +63,25 @@
                         <a href="#">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </a>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="search" @keyup="userSearch">
         
                     </section>
 
 
                     <section id="contacts">
                         
-                        <div v-for="(contact, index) in contacts" class="contact foto_profilo" @click="drawsContact(index)">
+                        <div v-for="(contact, index) in contacts" class="contact foto_profilo" :class="index==indexConractAttivo?'active':''" @click="drawsContact(index)">
+                            
+                            <div :class="contact.visible==false?'invisible':'visible'">
+                                <img :src="`img/avatar${contact.avatar}.jpg`" :alt="`img utente${contact.avatar}`">
 
-                            <img :src="`img/avatar${contact.avatar}.jpg`" :alt="`img utente${contact.avatar}`">
-
-                            <div>
-                                <div>{{contact.name}}</div>
-                                <div class="anteprima_ultimo_messaggio"> {{contact.messages[contact.messages.length -1].text}}</div>
+                                <div>
+                                    <div>{{contact.name}}</div>
+                                    <div class="anteprima_ultimo_messaggio">{{contact.messages[contact.messages.length -1].text}}</div>
+                                </div>
+    
+                                <div class="date">{{contact.messages[contact.messages.length-1].date}}</div>
                             </div>
-
-                            <div class="date">{{contact.messages[contact.messages.length-1].date}}</div>
                             
                         </div>
 

@@ -306,6 +306,10 @@ body{
             font-size: 1rem;
         }
 
+        .messages .option:hover{
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
         .messages .text div:first-child{
             word-break: break-all;
         }

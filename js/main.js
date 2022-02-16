@@ -203,7 +203,7 @@ const vue = new Vue(
             },
 
             drawsOptions(indice){
-                this.contacts[this.indexContactAttivo].messages[this.indexContactAttivo].options = !this.contacts[this.indexContactAttivo].messages[this.indexContactAttivo].options;
+                this.contacts[this.indexContactAttivo].messages[indice].options = !this.contacts[this.indexContactAttivo].messages[indice].options;
             }
         }
     

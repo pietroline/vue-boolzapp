@@ -215,6 +215,10 @@ const vue = new Vue(
                 this.contacts[this.indexContactAttivo].messages[indice].text = "Questo messaggio è stato eliminato";
                 this.contacts[this.indexContactAttivo].messages[indice].corsivo = true;
                 this.drawsOptions(indice);
+            },
+
+            deleteRemoveText(indice){
+                this.contacts[this.indexContactAttivo].messages.splice(indice,1);
             }
 
 

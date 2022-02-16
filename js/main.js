@@ -20,12 +20,14 @@ const vue = new Vue(
                                                     text: 'Ricordati di dargli da mangiare',
                                                     status: 'sent',
                                                     ultimoAccesso: '10/01/2020 18:20:00',
+                                                    options: false,
                                                 },
                                                 {
                                                     date: '10/01/2020 16:15:22',
                                                     text: 'Tutto fatto!',
                                                     status: 'received',
                                                     ultimoAccesso: '11/01/2020 22:18:46',
+                                                    options: false,
                                                 }
                                             ],
                             },
@@ -40,18 +42,21 @@ const vue = new Vue(
                                                     text: 'Ciao come stai?',
                                                     status: 'sent',
                                                     ultimoAccesso: '21/03/2020 17:31:00',
+                                                    options: false,
                                                 },
                                                 {
                                                     date: '20/03/2020 16:30:55',
                                                     text: 'Bene grazie! Stasera ci vediamo?',
                                                     status: 'received',
                                                     ultimoAccesso: '20/03/2020 18:38:55',
+                                                    options: false,
                                                 },
                                                 {
                                                     date: '20/03/2020 16:35:00',
                                                     text: 'Mi piacerebbe ma devo andare a fare la spesa.',
                                                     status: 'sent',
                                                     ultimoAccesso: '20/03/2020 17:10:22',
+                                                    options: false,
                                                 }
                                             ],
                                 },
@@ -66,18 +71,21 @@ const vue = new Vue(
                                                     text: 'La Marianna va in campagna',
                                                     status: 'received',
                                                     ultimoAccesso: '28/03/2020 10:17:40',
+                                                    options: false,
                                                 },
                                                 {
                                                     date: '28/03/2020 10:20:10',
                                                     text: 'Sicuro di non aver sbagliato chat?',
                                                     status: 'sent',
                                                     ultimoAccesso: "28/03/2020 12:25:10",
+                                                    options: false,
                                                 },
                                                 {
                                                     date: '28/03/2020 16:15:22',
                                                     text: 'Ah scusa!',
                                                     status: 'received',
                                                     ultimoAccesso: '28/03/2020 19:41:35',
+                                                    options: false,
                                                 }
                                             ],
                             },
@@ -92,12 +100,14 @@ const vue = new Vue(
                                                     text: 'Lo sai che ha aperto una nuova pizzeria?',
                                                     status: 'sent',
                                                     ultimoAccesso: '15/01/2020 19:40:55',
+                                                    options: false,
                                                 },
                                                 {
                                                     date: '10/01/2020 15:50:00',
                                                     text: 'Si, ma preferirei andare al cinema',
                                                     status: 'received',
                                                     ultimoAccesso:'11/01/2020 20:56:17',
+                                                    options: false,
                                                 }
                                             ],
                             },
@@ -192,8 +202,8 @@ const vue = new Vue(
                 
             },
 
-            drawsOptions(){
-                this.contacts[0].messages[0].options = true;
+            drawsOptions(indice){
+                this.contacts[this.indexContactAttivo].messages[this.indexContactAttivo].options = !this.contacts[this.indexContactAttivo].messages[this.indexContactAttivo].options;
             }
         }
     

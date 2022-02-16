@@ -286,13 +286,14 @@ body{
             position: absolute;
             top: 1.5rem;
             right: 0;
-
-            display: none;
-            
         }
 
-        .drawsOptions{
-            display: block;
+        .nascondi{
+            opacity: 0;
+        }
+
+        .mostra{
+            opacity: 1;
             z-index: 999;
         }
 

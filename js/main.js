@@ -91,48 +91,15 @@ const vue = new Vue(
                             },
                         ],
 
-            showContact: {
-                name: 'Michela',
-                avatar: '_1',
-                visible: true,
-                messages:   [
-                                {
-                                    date: '10/01/2020 15:30:55',
-                                    text: 'Hai portato a spasso il cane?',
-                                    status: 'sent'
-                                },
-                                {
-                                    date: '10/01/2020 15:50:00',
-                                    text: 'Ricordati di dargli da mangiare',
-                                    status: 'sent'
-                                },
-                                {
-                                    date: '10/01/2020 16:15:22',
-                                    text: 'Tutto fatto!',
-                                    status: 'received'
-                                }
-                            ],
-            },
-
-            textSend: "",
-            search: "",
             indexContactAttivo: 0,
-        },
-
-        mounted: function () {
-            this.$nextTick(function () {
-              this.drawsContact(0);
-            })
+            textSend: "",
+            search: "", 
         },
         
         methods:{
 
-            drawsContact(indice){
-                this.showContact.name = this.contacts[indice].name; 
-                this.showContact.avatar = this.contacts[indice].avatar;  
-                this.showContact.visible = this.contacts[indice].visible;
-                this.showContact.messages = this.contacts[indice].messages;  
-                this.indexContactAttivo = indice;  
+            setContactAttivo(indice){
+                this.indexContactAttivo = indice;
             },
 
             sendMessage(){
@@ -145,11 +112,11 @@ const vue = new Vue(
                     };
 
                     this.textSend = "";
-                    this.showContact.messages.push(message); 
+                    this.contacts[this.indexContactAttivo].messages.push(message); 
 
                     //simulo risposta con ok
                     setTimeout(() => {
-                        this.showContact.messages.push (
+                        this.contacts[this.indexContactAttivo].messages.push (
                                                             {
                                                                 date: '10/01/2020 16:15:22',
                                                                 text: "ok",

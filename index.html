@@ -70,7 +70,7 @@
 
                     <section id="contacts">
                         
-                        <div v-for="(contact, index) in contacts" class="contact foto_profilo" :class="index==indexContactAttivo?'active':''" @click="drawsContact(index)">
+                        <div v-for="(contact, index) in contacts" class="contact foto_profilo" :class="index==indexContactAttivo?'active':''" @click="setContactAttivo(index)">
                             
                             <div :class="contact.visible==false?'invisible':'visible'">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" :alt="`img utente${contact.avatar}`">
@@ -93,10 +93,10 @@
 
                     <header>
                             <a class="user foto_profilo" href="#">
-                                <img :src="`img/avatar${showContact.avatar}.jpg`" alt="Avatar 1">
+                                <img :src="`img/avatar${contacts[indexContactAttivo].avatar}.jpg`" alt="Avatar 1">
                                 <div class="name">
-                                    <h1>{{showContact.name}}</h1>
-                                    <h4>Ultimo accesso oggi {{showContact.messages[showContact.messages.length-1].date}}</h4>
+                                    <h1>{{contacts[indexContactAttivo].name}}</h1>
+                                    <h4>Ultimo accesso oggi {{contacts[indexContactAttivo].messages[contacts[indexContactAttivo].messages.length-1].date}}</h4>
                                 </div>
                             </a>
                         
@@ -117,7 +117,7 @@
 
                     <section class="messages">
                         
-                        <div v-for="message in showContact.messages" class="text" :class="message.status=='sent'?'sent':'received'">
+                        <div v-for="message in contacts[indexContactAttivo].messages" class="text" :class="message.status=='sent'?'sent':'received'">
                             <div>{{message.text}}</div>
                             <div class="data_ora info-message">{{message.date}}</div>
                         </div>

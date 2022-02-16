@@ -266,9 +266,35 @@ body{
             margin: 0.5rem 0;
 
             display: flex;
-            flex-direction: column;
+            flex-direction: column;       
+        }
 
-       
+        .messages .arrow{
+            color: #6b7376;
+        }
+
+        .messages .container_text{
+            position: relative;
+        }
+        
+        .messages .options{
+            background-color: #fff;
+
+            box-shadow: 0.5rem 1rem 1.5rem 0 #000;
+
+            border-radius: 0.3rem;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .messages .options:hover{
+            cursor: pointer;
+        }
+
+        .messages .option{
+            padding: 1rem;
+            font-size: 1rem;
         }
 
         .messages .text div:first-child{

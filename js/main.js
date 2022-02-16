@@ -14,6 +14,7 @@ const vue = new Vue(
                                                     status: 'sent',
                                                     ultimoAccesso: '11/01/2020 16:34:55',
                                                     options: false,
+                                                    corsivo: false,
                                                 },
                                                 {
                                                     date: '10/01/2020 15:50:00',
@@ -204,7 +205,19 @@ const vue = new Vue(
 
             drawsOptions(indice){
                 this.contacts[this.indexContactAttivo].messages[indice].options = !this.contacts[this.indexContactAttivo].messages[indice].options;
+            },
+
+            infoText(){
+
+            },
+
+            deleteText(indice){
+                this.contacts[this.indexContactAttivo].messages[indice].text = "Questo messaggio è stato eliminato";
+                this.contacts[this.indexContactAttivo].messages[indice].corsivo = true;
+                this.drawsOptions(indice);
             }
+
+
         }
     
     }

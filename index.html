@@ -124,11 +124,11 @@
                         
                         <div v-for="(message,index) in contacts[indexContactAttivo].messages" class="text" :class="message.status=='sent'?'sent':'received'">
                             <div class="container_text">
-                                <span>{{message.text}}</span>
+                                <span :class="{'corsivo': message.corsivo}">{{message.text}}</span>
                                 <a class="arrow" href="#"><i v-if="message.status=='sent'" class="fa-solid fa-chevron-down" @click="drawsOptions(index)"></i></a>
                                 <div class="options" :class="message.options?'mostra':'nascondi'">
-                                    <div class="option">Message info</div>
-                                    <div class="option">Delete message</div>
+                                    <div class="option" @click="infoText()">Message info</div>
+                                    <div class="option" @click="deleteText(index)">Delete message</div>
                                 </div>
                                
                             </div>

@@ -13,6 +13,7 @@ const vue = new Vue(
                                                     text: 'Hai portato a spasso il cane?',
                                                     status: 'sent',
                                                     ultimoAccesso: '11/01/2020 16:34:55',
+                                                    options: false,
                                                 },
                                                 {
                                                     date: '10/01/2020 15:50:00',
@@ -189,6 +190,10 @@ const vue = new Vue(
                 });
                 
                 
+            },
+
+            drawsOptions(){
+                this.contacts[0].messages[0].options = true;
             }
         }
     

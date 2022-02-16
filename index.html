@@ -123,14 +123,14 @@
                     <section class="messages">
                         
                         <div v-for="message in contacts[indexContactAttivo].messages" class="text" :class="message.status=='sent'?'sent':'received'">
-
                             <div class="container_text">
                                 <span>{{message.text}}</span>
-                                <a class="arrow" href="#"><i v-if="message.status=='sent'" class="fa-solid fa-chevron-down"></i></a>
-                                <div class="options">
+                                <a class="arrow" href="#"><i v-if="message.status=='sent'" class="fa-solid fa-chevron-down" @click="drawsOptions()"></i></a>
+                                <div class="options" :class="message.options?drawsOptions:''">
                                     <div class="option">Message info</div>
                                     <div class="option">Delete message</div>
                                 </div>
+                               
                             </div>
 
                             <div class="data_ora info-message">{{message.date}}</div>

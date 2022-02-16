@@ -98,15 +98,10 @@
                     <header>
                             <a class="user foto_profilo" href="#">
                                 <img :src="`img/avatar${contacts[indexContactAttivo].avatar}.jpg`" alt="Avatar 1">
+                                
                                 <div class="name">
                                     <h1>{{contacts[indexContactAttivo].name}}</h1>
-                                    <div v-if="contacts[indexContactAttivo].messages[contacts[indexContactAttivo].messages.length-1].ultimoAccesso != null">
-                                        <h4>{{contacts[indexContactAttivo].messages[contacts[indexContactAttivo].messages.length-1].ultimoAccesso}}</h4>
-                                    </div>
-                                    <div v-else>
-                                        <h4>{{contacts[indexContactAttivo].messages[contacts[indexContactAttivo].messages.length-1].date}}</h4>
-                                    </div>
-                                   
+                                    <h4>Ultimo accesso: {{contacts[indexContactAttivo].messages[contacts[indexContactAttivo].messages.length-1].ultimoAccesso}}</h4>            
                                 </div>
                             </a>
                         

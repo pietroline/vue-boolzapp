@@ -154,7 +154,7 @@ const vue = new Vue(
 
                 if(this.textSend != ""){
                     const message = {
-                        date: dayjs().format('DD/MM/YYYY [ore:] HH:mm:ss'),
+                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                         text: this.textSend,
                         status: 'sent',
                     };
@@ -166,10 +166,10 @@ const vue = new Vue(
                     setTimeout(() => {
                         this.contacts[this.indexContactAttivo].messages.push (
                                                             {
-                                                                date: dayjs().format('DD/MM/YYYY [ore:] HH:mm:ss'),
+                                                                date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                                                                 text: "ok",
                                                                 status: 'received',
-                                                                ultimoAccesso: dayjs().format('DD/MM/YYYY [ore:] HH:mm:ss'),
+                                                                ultimoAccesso: dayjs().format('DD/MM/YYYYs HH:mm:ss'),
                                                             }
                                                         );
                     }, 1000);

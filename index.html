@@ -70,19 +70,17 @@
 
                     <section id="contacts">
                         
-                        <div v-for="(contact, index) in contacts" class="contact foto_profilo" :class="index==indexContactAttivo?'active':''" @click="setContactAttivo(index)">
-                            
-                            <div :class="contact.visible==false?'invisible':'visible'">
-                                <img :src="`img/avatar${contact.avatar}.jpg`" :alt="`img utente${contact.avatar}`">
+                        <div v-for="(contact, index) in contacts" class="contact foto_profilo" :class="[index==indexContactAttivo?'active':''          ,         contact.visible==false?'invisible':'visible']" @click="setContactAttivo(index)">
+                             
+                            <img :src="`img/avatar${contact.avatar}.jpg`" :alt="`img utente${contact.avatar}`">
 
-                                <div>
-                                    <div>{{contact.name}}</div>
-                                    <div class="anteprima_ultimo_messaggio">{{contact.messages[contact.messages.length -1].text}}</div>
-                                </div>
-    
-                                <div class="date">{{contact.messages[contact.messages.length-1].date}}</div>
+                            <div>
+                                <div>{{contact.name}}</div>
+                                <div class="anteprima_ultimo_messaggio">{{contact.messages[contact.messages.length -1].text}}</div>
                             </div>
-                            
+
+                            <div class="date">{{contact.messages[contact.messages.length-1].date}}</div>
+                        
                         </div>
 
                     </section>

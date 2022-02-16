@@ -78,8 +78,13 @@
                                 <div>{{contact.name}}</div>
                                 <div class="anteprima_ultimo_messaggio">{{contact.messages[contact.messages.length -1].text}}</div>
                             </div>
-
-                            <div class="date">{{contact.messages[contact.messages.length-1].date}}</div>
+                            
+                            <div v-if="contacts[index].messages[contacts[index].messages.length-1].ultimoAccesso != null">
+                                <div class="date"> {{contact.messages[contact.messages.length-1].ultimoAccesso}}</div>
+                            </div>
+                            <div v-else>
+                                <div class="date">{{contact.messages[contact.messages.length-1].date}}</div>
+                            </div>                           
                         
                         </div>
 
@@ -94,7 +99,13 @@
                                 <img :src="`img/avatar${contacts[indexContactAttivo].avatar}.jpg`" alt="Avatar 1">
                                 <div class="name">
                                     <h1>{{contacts[indexContactAttivo].name}}</h1>
-                                    <h4>Ultimo accesso {{contacts[indexContactAttivo].messages[contacts[indexContactAttivo].messages.length-1].date}}</h4>
+                                    <div v-if="contacts[indexContactAttivo].messages[contacts[indexContactAttivo].messages.length-1].ultimoAccesso != null">
+                                        <h4>{{contacts[indexContactAttivo].messages[contacts[indexContactAttivo].messages.length-1].ultimoAccesso}}</h4>
+                                    </div>
+                                    <div v-else>
+                                        <h4>{{contacts[indexContactAttivo].messages[contacts[indexContactAttivo].messages.length-1].date}}</h4>
+                                    </div>
+                                   
                                 </div>
                             </a>
                         
@@ -147,6 +158,13 @@
         <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
         <script>dayjs().format()</script>
 
+        <!-- script plugin customParseFormat per day.js -->
+        <script src="https://unpkg.com/dayjs@1.8.21/plugin/customParseFormat.js"></script>
+        <script>dayjs.extend(window.dayjs_plugin_customParseFormat);</script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.8.35/plugin/duration.js"></script>
+        <script>dayjs.extend(window.dayjs_plugin_duration);</script>
+      
         <!-- script main.js -->
         <script type="text/javascript" src="js/main.js"></script>
     </body>

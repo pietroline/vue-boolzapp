@@ -79,12 +79,13 @@
                                 <div class="anteprima_ultimo_messaggio">{{contact.messages[contact.messages.length -1].text}}</div>
                             </div>
                             
-                            <div v-if="contacts[index].messages[contacts[index].messages.length-1].ultimoAccesso != null">
-                                <div class="date"> {{contact.messages[contact.messages.length-1].ultimoAccesso}}</div>
+                            <div class="date">
+                               
+                                <div>{{contact.messages[contact.messages.length-1].date}}</div>                                   
+                                <div>{{contact.messages[contact.messages.length-1].ultimoAccesso}}</div> 
+
                             </div>
-                            <div v-else>
-                                <div class="date">{{contact.messages[contact.messages.length-1].date}}</div>
-                            </div>                           
+                          
                         
                         </div>
 
@@ -162,9 +163,6 @@
         <script src="https://unpkg.com/dayjs@1.8.21/plugin/customParseFormat.js"></script>
         <script>dayjs.extend(window.dayjs_plugin_customParseFormat);</script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.8.35/plugin/duration.js"></script>
-        <script>dayjs.extend(window.dayjs_plugin_duration);</script>
-      
         <!-- script main.js -->
         <script type="text/javascript" src="js/main.js"></script>
     </body>

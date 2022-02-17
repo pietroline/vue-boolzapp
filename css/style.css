@@ -308,11 +308,11 @@ body{
         }
 
         .nascondi{
-            opacity: 0;
+            display: none;
         }
 
         .mostra{
-            opacity: 1;
+            display: block;
             z-index: 999;
         }
 

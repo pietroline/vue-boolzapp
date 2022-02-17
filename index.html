@@ -145,9 +145,24 @@
                     </section>
 
                     <section class="footer">
+
+                        <div  class="emoji" :class="{'view_emoji':icons}">
+                            <a href="#" @click="addEmoji('😀')">😀</a>
+                            <a href="#" @click="addEmoji('😁')">😁</span>
+                            <a href="#" @click="addEmoji('😍')">😍</span>
+                            <a href="#" @click="addEmoji('🤪')">🤪</span>
+                            <a href="#" @click="addEmoji('🥳')">🥳 </span>
+                            <a href="#" @click="addEmoji('🤬')">🤬</span>
+                            <a href="#" @click="addEmoji('👌')">👌</span>
+                            <a href="#" @click="addEmoji('💪')">💪</span>
+                            <a href="#" @click="addEmoji('🤝')">🤝</span>
+                            <a href="#" @click="addEmoji('👍')">👍</span>
+                            <a href="#" @click="addEmoji('👀')">👀</span>
+                            <a href="#" @click="addEmoji('🧑‍💻')">🧑‍💻</span>
+                        </div>
                     
                         <a href="#" class="left">
-                            <i class="fa-regular fa-face-smile"></i>
+                            <i class="fa-regular fa-face-smile" @click="viewIcons()"></i>
                         </a>
                         <input type="text" placeholder="Scrivi un messaggio" v-model="textSend" @keyup.enter="sendMessage()">
                         <a href="#" class="right">

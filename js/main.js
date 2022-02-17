@@ -97,7 +97,7 @@ const vue = new Vue(
                                 visible: true,
                                 messages:   [
                                                 {
-                                                    date: '10/01/2020 15:30:55',
+                                                    date: '13/05/2020 15:30:55',
                                                     text: 'Lo sai che ha aperto una nuova pizzeria?',
                                                     status: 'sent',
                                                     ultimoAccesso: '15/01/2020 19:40:55',
@@ -112,11 +112,118 @@ const vue = new Vue(
                                                 }
                                             ],
                             },
+                            {
+                                name: 'Silvio',
+                                avatar: '_5',
+                                visible: true,
+                                messages:   [
+                                                {
+                                                    date: '21/09/2020 9:14:55',
+                                                    text: 'Andiamo al supermercato?',
+                                                    status: 'sent',
+                                                    ultimoAccesso: '15/01/2020 19:40:55',
+                                                    options: false,
+                                                },
+                                                {
+                                                    date: '21/09/2020 9:30:00',
+                                                    text: 'Si, passo a prenderti alle 18:00',
+                                                    status: 'received',
+                                                    ultimoAccesso:'11/01/2020 20:56:17',
+                                                    options: false,
+                                                }
+                                            ],
+                            },
+                            {
+                                name: 'Alessandra',
+                                avatar: '_6',
+                                visible: true,
+                                messages:   [
+                                                {
+                                                    date: '25/08/2020 15:25:55',
+                                                    text: 'Ho una gran fame!!',
+                                                    status: 'sent',
+                                                    ultimoAccesso: '15/01/2020 19:40:55',
+                                                    options: false,
+                                                },
+                                                {
+                                                    date: '25/08/2020 15:27:00',
+                                                    text: 'Andiamo da Jhonny panino? 😋',
+                                                    status: 'received',
+                                                    ultimoAccesso:'11/01/2020 20:56:17',
+                                                    options: false,
+                                                },
+                                                {
+                                                    date: '25/08/2020 15:35:55',
+                                                    text: 'Siiiiii',
+                                                    status: 'sent',
+                                                    ultimoAccesso: '15/01/2020 19:40:55',
+                                                    options: false,
+                                                },
+                                            ],
+                            },
+                            {
+                                name: 'Francesco',
+                                avatar: '_7',
+                                visible: true,
+                                messages:   [
+                                                {
+                                                    date: '23/09/2020 18:42:55',
+                                                    text: 'Stasera usciamo?',
+                                                    status: 'sent',
+                                                    ultimoAccesso: '15/01/2020 19:40:55',
+                                                    options: false,
+                                                },
+                                                {
+                                                    date: '23/09/2020 18:50:00',
+                                                    text: 'Si, ma non torniamo tardi che domani sono impegnato 😪',
+                                                    status: 'received',
+                                                    ultimoAccesso:'11/01/2020 20:56:17',
+                                                    options: false,
+                                                },
+                                                {
+                                                    date: '23/09/2020 18:42:55',
+                                                    text: 'Tranquillo anche io',
+                                                    status: 'sent',
+                                                    ultimoAccesso: '15/01/2020 19:40:55',
+                                                    options: false,
+                                                },
+                                            ],
+                            },
+                            {
+                                name: 'Mario',
+                                avatar: '_8',
+                                visible: true,
+                                messages:   [
+                                                {
+                                                    date: '19/10/2020 8:30:55',
+                                                    text: 'Buongiorno!! Hai visto l\'ultimo film al cinema? 🎥',
+                                                    status: 'sent',
+                                                    ultimoAccesso: '15/01/2020 19:40:55',
+                                                    options: false,
+                                                },
+                                                {
+                                                    date: '19/10/2020 8:50:00',
+                                                    text: 'No, potremmo andarci insieme nel fine settimana',
+                                                    status: 'received',
+                                                    ultimoAccesso:'11/01/2020 20:56:17',
+                                                    options: false,
+                                                },
+                                                {
+                                                    date: '19/10/2020 9:15:55',
+                                                    text: 'Fantasticoooo!!!!',
+                                                    status: 'sent',
+                                                    ultimoAccesso: '15/01/2020 19:40:55',
+                                                    options: false,
+                                                },
+
+                                            ],
+                            },
                         ],
 
             indexContactAttivo: 0, //set primo contatto di contacts attivo e chat visualizzata nella pagina
             textSend: "",
-            search: "", 
+            search: "",
+            icons: false, 
         },
         
        
@@ -219,8 +326,15 @@ const vue = new Vue(
 
             deleteRemoveText(indice){
                 this.contacts[this.indexContactAttivo].messages.splice(indice,1);
-            }
+            },
 
+            viewIcons(){
+                this.icons = !this.icons;
+            },
+
+            addEmoji(emoji){
+                this.textSend += emoji; 
+            }
 
         }
     
